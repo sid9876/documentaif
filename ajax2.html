@@ -1,0 +1,26 @@
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+var formData = {
+    "private_key_id": "3b06ec3081188989bb3ba0ba3cf844d6a2daddb4",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCNb18KHqOHi/Ma\nVv6fwW7/bOtQ8+sm5etNDNMrNce+70k7U/hqp6EanAQeezUHwOEJ7yxP6gk5g2w1\nbLWweBtEiRA0hka1FpCpTUeijT1yuYNPP0hEh8xUdhwzdkyB6InmSRjpwnuAGwla\n4vYIfYMs6h8Q6NjwYdBPCNkO5m/PKmrbUmuNtcvImhc3tU5DgWpb/uETBLW/YYCi\nSlvNUJwWmZBwPsqnHQA2TNmDnuhviPYdm4hBy+P5U+NWp2WkI8zVtUyDGVOmY/gK\neXNh3dYAcwThfsDXR+Nw1FQGM+65nQ6uCYY25lL3cycGnUFuVt/zW3ltUygXSBu0\naPjarAyDAgMBAAECggEAJ/rS7Tvi8vZrBkeQG12lADvsOspwbuLwRCv7Z0wBBiaC\n12vxnUh8QFbYzTr7rxDlLBc5Oe/IosLVLDbqFxOkdZefBpHsW9UgmFL5jGgLdiod\nhaG4TnLqnfdzGlL25oPysy93hOCOY5SA7PmaHaVJFsGpfXCsniqwJR81qEIYWgFS\nWYABPDc5lVqY5T2ZAAVoCfdnB/+dXywHiUQi5L1ikT52Odx55Fy/U52ecYEwGkiu\nvUWens7bS0MKsc51aiWok0KLVaZR4oKCB4YTum/0sgmXst3GoQ/xRGWQom/APY6o\nNHCuMAdPQVxClDpctjKdU84CWpXaDA9Af3TnTIHI/QKBgQDHQTUks4a+7ThnpLmj\ncwQQ4et+Qr7o/S1I5cvIA/JZfkWRakI5ovwkjLL9E//k47fMK8wmg5GJIs83OynZ\nTUnoRgcGSLkbOPBMO5yIM/Rj084kzDNg0hjg+cpn93F1HbquqJjTJNbwBKwrrS8R\n2TUYIr2O4BDMYN2100/uZTge7QKBgQC1tsiQeAXGubr3MTjeCf2tSF0KSOwovUry\nXmnqforiOJPKgeytoxdD5ILi8yrUtS/CkuB/dFiaTlffVC4NdCOZY16BCcJcaf3h\nFD0dXLFf2cvh6/EqhCEDeBWa/yHXzOot2AiEkwfp3aJiM+gDXlYAWwj326S5uRei\n7YWzjbz7LwKBgQCiokKyNiZhaFaFohozowlKjlwcrnYMzblMquPt2erRyRMXYde0\nG6gaXQ0rLEvNk2DNsWHsfa8oc9UWi5/Y0hDlGWNaablM0uiwEGfvdBih8ptrxZCa\nEmJkHv5qZbmhkiZxsQMsNAGL3wR4kd69fsCrdo+qMpEDgHz2kAfJ2aw48QKBgDL5\nIynjgTtNvnS5Cgq/IroJIpBQBG8pKmzyryNoe+0Zkdustoe+yDfzUgP30nv4l30t\nVmxqZrBiaaPsKT785T+R8GCiLDNgSCdrVfl2lwscPWUSmoQirGAcv3LLPuMaSFaz\n0y/dTsr7sSF7Dgpj3BwdbVaZ9otisI6zsl271NdhAoGAOfwEcUGtlRzTJYpQBOQC\nERpvyDp9ES4bEzRcia+oVJPdWsuwxM5Yvf4Ye+F9JmLdibaMumLqyNWWWYdBaf61\nYcJxaqQj5EhswaU4N0VvOV8YB71OcnNCx6YxyiWSf2jdeBSytmCuGsmuBR1BFmns\nqMsmr28pNtsB+OX2Vz5Eyeo=\n-----END PRIVATE KEY-----\n",
+    "client_email": "starting-account-iqfxtx5dhmea@endless-tractor-292510.iam.gserviceaccount.com",
+    "scope" : "https://www.googleapis.com/auth/cloud-platform",
+    "auth_url" : "https://www.googleapis.com/oauth2/v4/token"
+}; //Array 
+var formData = JSON.stringify(formData);
+$.ajax({
+    url : "https://invoiceprocessor-backend.zerone-consulting.com/gettoken/", // Url of backend (can be python, php, etc..)
+    // url : "http://192.168.0.30:9010/gettoken/", // Url of backend (can be python, php, etc..)
+    type: "POST", // data type (can be get, post, put, delete)
+    data : formData, // data in json format
+  	async : false, // enable or disable async (optional, but suggested as false if you need to populate data afterwards)
+    success: function(response, textStatus, jqXHR) {
+    	console.log(response);
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+		console.log(jqXHR);
+      	console.log(textStatus);
+      	console.log(errorThrown);
+    }
+});
+</script>
